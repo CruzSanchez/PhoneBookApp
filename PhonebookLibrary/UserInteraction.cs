@@ -74,9 +74,10 @@ namespace PhonebookLibrary
                     Environment.Exit(0);
                     break;
                 default:
+                    SetConsoleColor(ConsoleColor.Red);
                     Console.WriteLine("That was an incorrect selection. Please try again.");
+                    ResetConsoleColor();
                     break;
-
             }
         }
 
@@ -102,6 +103,16 @@ namespace PhonebookLibrary
             Console.WriteLine("1 - Create a Contact\n2 - Read Contact List\n3 - Update a Contact\n" +
                 "4 - Delete a Contact\n5 - End Application");
             NewLine();
+        }
+
+        private static void SetConsoleColor(ConsoleColor color)
+        {
+            Console.ForegroundColor = color;
+        }
+
+        private static void ResetConsoleColor()
+        {
+            Console.ResetColor();
         }
     }
 }
