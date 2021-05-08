@@ -8,7 +8,9 @@ namespace PhonebookLibrary
 {
     public static class Phonebook
     {
-        public static List<Contact> Contacts { get; private set; } = new List<Contact>();
+        public static int ID { get; private set; } = 0;
+
+        public static Dictionary<int, Contact> Contacts { get; private set; } = new Dictionary<int, Contact>();
 
         public static void CreateContact()
         {
@@ -22,20 +24,35 @@ namespace PhonebookLibrary
             Console.WriteLine("Now enter the DOB of your contact:");
             contact.DOB = DateTime.Parse(Console.ReadLine());
 
+            ID++;
             AddContactToList(contact);
         }
 
         private static void AddContactToList(Contact contact)
         {
-            Contacts.Add(contact);
+            Contacts.Add(ID, contact);
         }
 
         public static void ReadBackContacts()
         {
             foreach (var contact in Phonebook.Contacts)
             {
-                Console.WriteLine($"Name :{contact.Name} | Phone #: {contact.Number} | E-Mail: {contact.Email} | DOB: {contact.DOB}");
+                Console.WriteLine($"ID: {contact.Key} | Name :{contact.Value.Name} | Phone #: {contact.Value.Number} | E-Mail: {contact.Value.Email} | DOB: {contact.Value.DOB}");
             }
         }
+
+        public static void UpdateContact(Contact contact)
+        {            
+            Console.WriteLine("Please enter the new name of your contact:");
+            contact.Name = Console.ReadLine();
+            Console.WriteLine("Now enter the new number of your contact:");
+            contact.Number = Console.ReadLine();
+            Console.WriteLine("Please enter the new email for your contact:");
+            contact.Email = Console.ReadLine();
+            Console.WriteLine("Now enter the new DOB of your contact:");
+            contact.DOB = DateTime.Parse(Console.ReadLine());            
+            
+        }
+
     }
 }
