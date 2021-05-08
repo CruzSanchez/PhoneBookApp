@@ -24,7 +24,84 @@ namespace PhonebookLibrary
         public static void Intro()
         {
             Console.WriteLine("Welcome to the Phonebook Application.");
-            Console.WriteLine("This application is used to create, read back, update, and delete contacts in a database.");
+            NewLine();           
+           
+        }
+
+        private static void NewLine()
+        {
+            Console.WriteLine();
+        }
+
+        public static void GetMainAction()
+        {
+            PromptUserForAction();
+            ConsoleKey userAction = GetKeyPress();
+            int contactID;
+            switch (userAction)
+            {
+                case ConsoleKey.D1:
+                case ConsoleKey.NumPad1:
+                    ClearConsole();
+                    Phonebook.CreateContact();
+                    break;
+                case ConsoleKey.D2:
+                case ConsoleKey.NumPad2:
+                    ClearConsole();
+                    Phonebook.ReadBackContacts();
+                    break;
+                case ConsoleKey.D3:
+                case ConsoleKey.NumPad3:
+                    ClearConsole();
+                    Phonebook.ReadBackContacts();
+                    Console.WriteLine("Which contact would you like to update? Enter contact ID:");
+                    contactID = CheckNumberFromUser(Console.ReadLine());
+                    var contact = Phonebook.Contacts.Where(c => c.Key == contactID).FirstOrDefault();
+                    Phonebook.UpdateContact(contact.Value);
+                    break;
+                case ConsoleKey.D4:
+                case ConsoleKey.NumPad4:
+                    ClearConsole();
+                    Phonebook.ReadBackContacts();
+                    Console.WriteLine("Which contact would you like to delete? Enter Contact ID:");
+                    contactID = CheckNumberFromUser(Console.ReadLine());
+                    Phonebook.DeleteContact(contactID);
+                    break;
+                case ConsoleKey.D5:
+                case ConsoleKey.NumPad5:
+                    ClearConsole();
+                    Outro();                    
+                    Environment.Exit(0);
+                    break;
+                default:
+                    Console.WriteLine("That was an incorrect selection. Please try again.");
+                    break;
+
+            }
+        }
+
+        private static void Outro()
+        {
+            Console.WriteLine("Thank you for using the Phonebook Application. Goodbye.");
+        }
+
+        private static ConsoleKey GetKeyPress()
+        {
+            return Console.ReadKey(true).Key;
+        }
+
+        private static void ClearConsole()
+        {
+            Console.Clear();
+        }
+
+        private static void PromptUserForAction()
+        {
+            Console.WriteLine("Which action would you like to perform?");
+            NewLine();
+            Console.WriteLine("1 - Create a Contact\n2 - Read Contact List\n3 - Update a Contact\n" +
+                "4 - Delete a Contact\n5 - End Application");
+            NewLine();
         }
     }
 }
