@@ -54,5 +54,11 @@ namespace PhonebookLibrary
             
         }
 
+
+        public static void DeleteContact(int contactID)
+        {
+            Contacts.Remove(contactID);
+        }
+
     }
 }

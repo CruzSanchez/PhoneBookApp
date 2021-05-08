@@ -71,7 +71,30 @@ namespace PhonebookConsoleUI
             }
 
             Phonebook.ReadBackContacts();
-            
+
+            Console.WriteLine("Would you like to delete a contact?");
+
+            answer = Console.ReadLine();
+
+            if (answer == "yes")
+            {
+                Phonebook.ReadBackContacts();
+                Console.WriteLine("Which contact would you like to delete ID:");
+                var contactID = int.Parse(Console.ReadLine());
+                Phonebook.DeleteContact(contactID);
+
+            }
+            else if (string.IsNullOrEmpty(answer))
+            {
+                Console.WriteLine("You have failed to type anything.");
+            }
+            else if (answer == "no")
+            {
+                Console.WriteLine("You have chosen not to delete a contact.");
+            }
+
+            Phonebook.ReadBackContacts();
+
         }
     }
 }
