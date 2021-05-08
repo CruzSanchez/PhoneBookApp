@@ -35,9 +35,10 @@ namespace PhonebookLibrary
 
         public static void ReadBackContacts()
         {
-            foreach (var contact in Phonebook.Contacts)
+            foreach (var contact in Contacts)
             {
-                Console.WriteLine($"ID: {contact.Key} | Name :{contact.Value.Name} | Phone #: {contact.Value.Number} | E-Mail: {contact.Value.Email} | DOB: {contact.Value.DOB}");
+                Console.WriteLine($"ID: {contact.Key} | Name : {contact.Value.Name} | Phone #: {contact.Value.Number} " +
+                    $"| E-Mail: {contact.Value.Email} | DOB: {contact.Value.DOB.ToShortDateString()}");
             }
         }
 

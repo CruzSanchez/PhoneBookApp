@@ -9,8 +9,12 @@ namespace PhonebookConsoleUI
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to the Phonebook Application.");
-            Console.WriteLine("This application is used to create, read back, update, and delete contacts in a database.");
+            //ToDo: Anywhere there is a parse() the application can Break. Research TryParse() Hint while(!something){}
+            //ToDo: when the user sees the contacts DOB in the list, only show the ShortDateString, no time should be seen
+            //ToDo: think about where you have duplicated code below and how to abstract it into a method. Perhaps think about 
+            // redoing the whole UI, Look at the doc to get an idea of what I mean.
+
+            UserInteraction.Intro();
 
             Console.WriteLine("Would you like to create a contact?");
             var answer = Console.ReadLine();
@@ -54,7 +58,8 @@ namespace PhonebookConsoleUI
             {
                 Phonebook.ReadBackContacts();
                 Console.WriteLine("Which contact would you like to update? Enter contact ID:");
-                var contactID = uint.Parse(Console.ReadLine());
+                
+                int contactID = UserInteraction.CheckNumberFromUser(Console.ReadLine());
 
                 var contact = Phonebook.Contacts.Where(c => c.Key == contactID).FirstOrDefault();
 
@@ -80,7 +85,7 @@ namespace PhonebookConsoleUI
             {
                 Phonebook.ReadBackContacts();
                 Console.WriteLine("Which contact would you like to delete ID:");
-                var contactID = int.Parse(Console.ReadLine());
+                int contactID = UserInteraction.CheckNumberFromUser(Console.ReadLine());
                 Phonebook.DeleteContact(contactID);
 
             }
