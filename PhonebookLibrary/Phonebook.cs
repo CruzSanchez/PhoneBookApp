@@ -8,12 +8,12 @@ namespace PhonebookLibrary
 {
     public static class Phonebook
     {
-        public static int ID { get; private set; } = 0;
+        public static int ID { get; set; } = 0;
 
-        public static Dictionary<int, Contact> Contacts { get; private set; } = new Dictionary<int, Contact>() 
-        {
-            { ID, new Contact(){Name = "John Smith", Number = "(555)555-5555", Email = "johnsmith@email.com", DOB = new DateTime(1950,01,10)} }        
-        };
+        public static Dictionary<int, Contact> Contacts { get; private set; } = new Dictionary<int, Contact>(); 
+        //{
+        //    { ID, new Contact(){Name = "John Smith", Number = "(555)555-5555", Email = "johnsmith@email.com", DOB = new DateTime(1950,01,10)} }        
+        //};
 
         public static void CreateContact()
         {

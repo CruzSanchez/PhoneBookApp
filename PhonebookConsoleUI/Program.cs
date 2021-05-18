@@ -12,6 +12,8 @@ namespace PhonebookConsoleUI
             UserInteraction.Intro();
             do
             {
+                var jsonDataAccess = new JsonDataAccess();
+                jsonDataAccess.LoadData();
                 UserInteraction.GetMainAction();
             } while (true);
         }

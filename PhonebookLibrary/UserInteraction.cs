@@ -70,7 +70,9 @@ namespace PhonebookLibrary
                 case ConsoleKey.D5:
                 case ConsoleKey.NumPad5:
                     ClearConsole();
-                    Outro();                    
+                    Outro();
+                    var jsonDataAccess = new JsonDataAccess();
+                    jsonDataAccess.SaveData();
                     Environment.Exit(0);
                     break;
                 default:
@@ -79,6 +81,13 @@ namespace PhonebookLibrary
                     ResetConsoleColor();
                     break;
             }
+        }
+
+        internal static void NoFile()
+        {
+            SetConsoleColor(ConsoleColor.Red);
+            Console.WriteLine("The file does not exist.");
+            ResetConsoleColor();
         }
 
         private static void Outro()
