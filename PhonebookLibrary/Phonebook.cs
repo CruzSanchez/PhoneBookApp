@@ -8,16 +8,13 @@ namespace PhonebookLibrary
 {
     public static class Phonebook
     {
-        public static int ID { get; set; } = 0;
-
-        public static Dictionary<int, Contact> Contacts { get; private set; } = new Dictionary<int, Contact>(); 
-        //{
-        //    { ID, new Contact(){Name = "John Smith", Number = "(555)555-5555", Email = "johnsmith@email.com", DOB = new DateTime(1950,01,10)} }        
-        //};
-
+        public static List<Contact> Contacts { get; private set; } = new List<Contact>(); 
+       
         public static void CreateContact()
         {
             var contact = new Contact();
+            var id = Contacts.OrderByDescending(c => c.Id).First().Id;
+            contact.Id = ++id;
             Console.WriteLine("Please enter the name of your contact:");
             contact.Name = Console.ReadLine();
             Console.WriteLine("Now enter the number of your contact:");
@@ -26,22 +23,21 @@ namespace PhonebookLibrary
             contact.Email = Console.ReadLine();
             Console.WriteLine("Now enter the DOB of your contact:");
             contact.DOB = DateTime.Parse(Console.ReadLine());
-
-            ID++;
+            
             AddContactToList(contact);
         }
 
-        private static void AddContactToList(Contact contact)
+        public static void AddContactToList(Contact contact)
         {
-            Contacts.Add(ID, contact);
+            Contacts.Add(contact);
         }
 
         public static void ReadBackContacts()
         {
             foreach (var contact in Contacts)
             {
-                Console.WriteLine($"ID: {contact.Key} | Name : {contact.Value.Name} | Phone #: {contact.Value.Number} " +
-                    $"| E-Mail: {contact.Value.Email} | DOB: {contact.Value.DOB.ToShortDateString()}");
+                Console.WriteLine($"ID: {contact.Id} | Name : {contact.Name} | Phone #: {contact.Number} " +
+                    $"| E-Mail: {contact.Email} | DOB: {contact.DOB.ToShortDateString()}");
             }
         }
 
@@ -59,9 +55,9 @@ namespace PhonebookLibrary
         }
 
 
-        public static void DeleteContact(int contactID)
+        public static void DeleteContact(Contact contact)
         {
-            Contacts.Remove(contactID);
+            Contacts.Remove(contact);
         }
 
     }

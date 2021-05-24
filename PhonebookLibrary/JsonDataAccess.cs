@@ -11,7 +11,7 @@ namespace PhonebookLibrary
 {
     public class JsonDataAccess : IDataAccess
     {
-        private static string path = $"{Directory.GetCurrentDirectory()}/ContactData.json";
+        private static string path = Path.Combine(Directory.GetCurrentDirectory(), "..", "..", "..", "..", "ContactData.json");
         public void LoadData()
         {
 
@@ -21,9 +21,9 @@ namespace PhonebookLibrary
                 var jArray = JArray.Parse(text);
                 foreach(var token in jArray)
                 {
-                    Phonebook.ID++;
+                    
                     var contact = JsonConvert.DeserializeObject<Contact>(token.ToString());
-                    Phonebook.Contacts.Add(Phonebook.ID, contact);
+                    Phonebook.Contacts.Add(contact);
                 }
             }
             else
@@ -34,7 +34,7 @@ namespace PhonebookLibrary
 
         public void SaveData()
         {
-            var text = JsonConvert.SerializeObject(Phonebook.Contacts.Values, Formatting.Indented);
+            var text = JsonConvert.SerializeObject(Phonebook.Contacts, Formatting.Indented);
             File.WriteAllText(path, text);
         }
     }

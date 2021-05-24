@@ -56,8 +56,8 @@ namespace PhonebookLibrary
                     Phonebook.ReadBackContacts();
                     Console.WriteLine("Which contact would you like to update? Enter contact ID:");
                     contactID = CheckNumberFromUser(Console.ReadLine());
-                    var contact = Phonebook.Contacts.Where(c => c.Key == contactID).FirstOrDefault();
-                    Phonebook.UpdateContact(contact.Value);
+                    var contact = Phonebook.Contacts.Where(c => c.Id == contactID).FirstOrDefault();
+                    Phonebook.UpdateContact(contact);
                     break;
                 case ConsoleKey.D4:
                 case ConsoleKey.NumPad4:
@@ -65,7 +65,8 @@ namespace PhonebookLibrary
                     Phonebook.ReadBackContacts();
                     Console.WriteLine("Which contact would you like to delete? Enter Contact ID:");
                     contactID = CheckNumberFromUser(Console.ReadLine());
-                    Phonebook.DeleteContact(contactID);
+                    contact = Phonebook.Contacts.Where(c => c.Id == contactID).FirstOrDefault();
+                    Phonebook.DeleteContact(contact);
                     break;
                 case ConsoleKey.D5:
                 case ConsoleKey.NumPad5:
