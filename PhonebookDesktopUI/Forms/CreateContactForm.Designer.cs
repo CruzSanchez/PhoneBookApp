@@ -43,18 +43,20 @@ namespace PhonebookDesktopUI.Forms
             // nameLabel
             // 
             this.nameLabel.AutoSize = true;
+            this.nameLabel.Font = new System.Drawing.Font("Sitka Subheading", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.nameLabel.Location = new System.Drawing.Point(135, 75);
             this.nameLabel.Name = "nameLabel";
-            this.nameLabel.Size = new System.Drawing.Size(42, 15);
+            this.nameLabel.Size = new System.Drawing.Size(44, 18);
             this.nameLabel.TabIndex = 0;
             this.nameLabel.Text = "Name:";
             // 
             // numberLabel
             // 
             this.numberLabel.AutoSize = true;
-            this.numberLabel.Location = new System.Drawing.Point(135, 114);
+            this.numberLabel.Font = new System.Drawing.Font("Sitka Subheading", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.numberLabel.Location = new System.Drawing.Point(135, 113);
             this.numberLabel.Name = "numberLabel";
-            this.numberLabel.Size = new System.Drawing.Size(54, 15);
+            this.numberLabel.Size = new System.Drawing.Size(58, 18);
             this.numberLabel.TabIndex = 1;
             this.numberLabel.Text = "Number:";
             // 
@@ -82,18 +84,20 @@ namespace PhonebookDesktopUI.Forms
             // dobLabel
             // 
             this.dobLabel.AutoSize = true;
-            this.dobLabel.Location = new System.Drawing.Point(135, 192);
+            this.dobLabel.Font = new System.Drawing.Font("Sitka Subheading", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.dobLabel.Location = new System.Drawing.Point(135, 189);
             this.dobLabel.Name = "dobLabel";
-            this.dobLabel.Size = new System.Drawing.Size(34, 15);
+            this.dobLabel.Size = new System.Drawing.Size(36, 18);
             this.dobLabel.TabIndex = 5;
             this.dobLabel.Text = "DOB:";
             // 
             // emailLabel
             // 
             this.emailLabel.AutoSize = true;
-            this.emailLabel.Location = new System.Drawing.Point(135, 153);
+            this.emailLabel.Font = new System.Drawing.Font("Sitka Subheading", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.emailLabel.Location = new System.Drawing.Point(135, 151);
             this.emailLabel.Name = "emailLabel";
-            this.emailLabel.Size = new System.Drawing.Size(39, 15);
+            this.emailLabel.Size = new System.Drawing.Size(45, 18);
             this.emailLabel.TabIndex = 4;
             this.emailLabel.Text = "Email:";
             // 
@@ -106,9 +110,10 @@ namespace PhonebookDesktopUI.Forms
             // 
             // CreateButton
             // 
+            this.CreateButton.Font = new System.Drawing.Font("Sitka Small", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.CreateButton.Location = new System.Drawing.Point(282, 240);
             this.CreateButton.Name = "CreateButton";
-            this.CreateButton.Size = new System.Drawing.Size(75, 23);
+            this.CreateButton.Size = new System.Drawing.Size(75, 27);
             this.CreateButton.TabIndex = 8;
             this.CreateButton.Text = "Create";
             this.CreateButton.UseVisualStyleBackColor = true;
@@ -118,6 +123,7 @@ namespace PhonebookDesktopUI.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.ClientSize = new System.Drawing.Size(560, 310);
             this.Controls.Add(this.CreateButton);
             this.Controls.Add(this.dobPicker);
@@ -129,7 +135,7 @@ namespace PhonebookDesktopUI.Forms
             this.Controls.Add(this.numberLabel);
             this.Controls.Add(this.nameLabel);
             this.Name = "CreateContactForm";
-            this.Text = "CreateContactForm";
+            this.Text = "Create Contact";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -37,13 +37,15 @@ namespace PhonebookDesktopUI
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.phonebookGridView = new System.Windows.Forms.DataGridView();
             this.RefreshDataButton = new System.Windows.Forms.Button();
+            this.consoleButton = new System.Windows.Forms.Button();
+            this.apiButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.phonebookGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // CreateButton
             // 
             this.CreateButton.Font = new System.Drawing.Font("Sitka Subheading", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.CreateButton.Location = new System.Drawing.Point(625, 112);
+            this.CreateButton.Location = new System.Drawing.Point(657, 116);
             this.CreateButton.Name = "CreateButton";
             this.CreateButton.Size = new System.Drawing.Size(103, 30);
             this.CreateButton.TabIndex = 0;
@@ -54,7 +56,7 @@ namespace PhonebookDesktopUI
             // ReadButton
             // 
             this.ReadButton.Font = new System.Drawing.Font("Sitka Subheading", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.ReadButton.Location = new System.Drawing.Point(625, 173);
+            this.ReadButton.Location = new System.Drawing.Point(657, 176);
             this.ReadButton.Name = "ReadButton";
             this.ReadButton.Size = new System.Drawing.Size(103, 30);
             this.ReadButton.TabIndex = 1;
@@ -65,17 +67,18 @@ namespace PhonebookDesktopUI
             // UpdateButton
             // 
             this.UpdateButton.Font = new System.Drawing.Font("Sitka Subheading", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.UpdateButton.Location = new System.Drawing.Point(625, 234);
+            this.UpdateButton.Location = new System.Drawing.Point(657, 236);
             this.UpdateButton.Name = "UpdateButton";
             this.UpdateButton.Size = new System.Drawing.Size(103, 30);
             this.UpdateButton.TabIndex = 2;
             this.UpdateButton.Text = "Update Contact";
             this.UpdateButton.UseVisualStyleBackColor = true;
+            this.UpdateButton.Click += new System.EventHandler(this.UpdateButton_Click);
             // 
             // DeleteButton
             // 
             this.DeleteButton.Font = new System.Drawing.Font("Sitka Subheading", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.DeleteButton.Location = new System.Drawing.Point(625, 295);
+            this.DeleteButton.Location = new System.Drawing.Point(657, 296);
             this.DeleteButton.Name = "DeleteButton";
             this.DeleteButton.Size = new System.Drawing.Size(103, 30);
             this.DeleteButton.TabIndex = 3;
@@ -89,9 +92,11 @@ namespace PhonebookDesktopUI
             this.phonebookGridView.BackgroundColor = System.Drawing.SystemColors.Window;
             this.phonebookGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.phonebookGridView.Location = new System.Drawing.Point(48, 92);
+            this.phonebookGridView.MultiSelect = false;
             this.phonebookGridView.Name = "phonebookGridView";
             this.phonebookGridView.ReadOnly = true;
             this.phonebookGridView.RowTemplate.Height = 25;
+            this.phonebookGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.phonebookGridView.Size = new System.Drawing.Size(558, 259);
             this.phonebookGridView.TabIndex = 4;
             // 
@@ -106,12 +111,32 @@ namespace PhonebookDesktopUI
             this.RefreshDataButton.UseVisualStyleBackColor = true;
             this.RefreshDataButton.Click += new System.EventHandler(this.RefreshDataButton_Click);
             // 
+            // consoleButton
+            // 
+            this.consoleButton.Location = new System.Drawing.Point(169, 37);
+            this.consoleButton.Name = "consoleButton";
+            this.consoleButton.Size = new System.Drawing.Size(151, 24);
+            this.consoleButton.TabIndex = 6;
+            this.consoleButton.Text = "Launch Console Runner";
+            this.consoleButton.UseVisualStyleBackColor = true;
+            // 
+            // apiButton
+            // 
+            this.apiButton.Location = new System.Drawing.Point(367, 37);
+            this.apiButton.Name = "apiButton";
+            this.apiButton.Size = new System.Drawing.Size(75, 24);
+            this.apiButton.TabIndex = 7;
+            this.apiButton.Text = "Launch API";
+            this.apiButton.UseVisualStyleBackColor = true;
+            // 
             // PhonebookForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CornflowerBlue;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.apiButton);
+            this.Controls.Add(this.consoleButton);
             this.Controls.Add(this.RefreshDataButton);
             this.Controls.Add(this.phonebookGridView);
             this.Controls.Add(this.DeleteButton);
@@ -135,6 +160,8 @@ namespace PhonebookDesktopUI
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.DataGridView phonebookGridView;
         private System.Windows.Forms.Button RefreshDataButton;
+        private System.Windows.Forms.Button consoleButton;
+        private System.Windows.Forms.Button apiButton;
     }
 }
 

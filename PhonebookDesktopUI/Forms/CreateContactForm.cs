@@ -29,5 +29,7 @@ namespace PhonebookDesktopUI.Forms
             MessageBox.Show("Contact created.");
             Close();
         }
+
+       
     }
 }

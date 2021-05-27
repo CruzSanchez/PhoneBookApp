@@ -21,12 +21,14 @@ namespace PhonebookDesktopUI
 
         private void ReadButton_Click(object sender, EventArgs e)
         {
-            var jsonDataAccess = new JsonDataAccess();
-            jsonDataAccess.LoadData();
+            if (Phonebook.Contacts.Count == 0)
+            {
+                var jsonDataAccess = new JsonDataAccess();
+                jsonDataAccess.LoadData();
+            }
 
             phonebookGridView.DataSource = Phonebook.Contacts;
 
-            
         }
 
         private void CreateButton_Click(object sender, EventArgs e)
@@ -39,6 +41,14 @@ namespace PhonebookDesktopUI
         {
             phonebookGridView.DataSource = null;
             phonebookGridView.DataSource = Phonebook.Contacts;
+        }
+
+        private void UpdateButton_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow viewRow = phonebookGridView.SelectedRows[0];
+            var contact = Phonebook.Contacts.Where(c => c.Id == int.Parse(viewRow.Cells["Id"].Value.ToString())).FirstOrDefault();
+            var updateContact = new UpdateContactForm(contact);
+            updateContact.Show();
         }
     }
 }
