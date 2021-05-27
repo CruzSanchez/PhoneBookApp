@@ -84,6 +84,7 @@ namespace PhonebookDesktopUI
             this.DeleteButton.TabIndex = 3;
             this.DeleteButton.Text = "Delete Contact";
             this.DeleteButton.UseVisualStyleBackColor = true;
+            this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
             // phonebookGridView
             // 

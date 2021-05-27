@@ -49,6 +49,34 @@ namespace PhonebookDesktopUI
             var contact = Phonebook.Contacts.Where(c => c.Id == int.Parse(viewRow.Cells["Id"].Value.ToString())).FirstOrDefault();
             var updateContact = new UpdateContactForm(contact);
             updateContact.Show();
+            
         }
+
+        private void DeleteButton_Click(object sender, EventArgs e)
+        {
+            var result = MessageBox.Show("You are about to delete a contact. This is a permanent action.\nAre you sure?", "Warning!", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                DataGridViewRow viewRow = phonebookGridView.SelectedRows[0];
+                var contact = Phonebook.Contacts.Where(c => c.Id == int.Parse(viewRow.Cells["Id"].Value.ToString())).FirstOrDefault();
+                Phonebook.Contacts.Remove(contact);
+                var dataAccess = new JsonDataAccess();
+                dataAccess.SaveData();
+                MessageBox.Show("Contact deleted.");
+            }
+            else
+            {
+                MessageBox.Show("Delete aborted.");
+            }
+            RefreshContactList();
+        }
+
+
+        internal void RefreshContactList()
+        {
+            phonebookGridView.DataSource = null;
+            phonebookGridView.DataSource = Phonebook.Contacts;
+        }
+
     }
 }

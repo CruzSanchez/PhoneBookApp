@@ -31,10 +31,14 @@ namespace PhonebookDesktopUI.Forms
             OriginalContact.Number = UpdatedNumberTextbox.Text;
             OriginalContact.Email = UpdatedEmailTextbox.Text;
             OriginalContact.DOB = UpdatedDobPicker.Value.Date;
+            var dataAccess = new JsonDataAccess();
+            dataAccess.SaveData();
 
-            MessageBox.Show("Contact updated.");
+            MessageBox.Show("Contact updated. Please refresh data.");
 
             Close();
+            
+            
         }
     }
 }
