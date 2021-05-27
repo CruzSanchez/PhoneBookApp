@@ -28,6 +28,7 @@ namespace PhonebookLibrary
             }
             else
             {
+                Console.WriteLine(path);
                 UserInteraction.NoFile();
             }
         }

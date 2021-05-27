@@ -37,7 +37,7 @@ namespace PhonebookDesktopUI
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.phonebookGridView = new System.Windows.Forms.DataGridView();
             this.RefreshDataButton = new System.Windows.Forms.Button();
-            this.consoleButton = new System.Windows.Forms.Button();
+            this.ConsoleButton = new System.Windows.Forms.Button();
             this.apiButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.phonebookGridView)).BeginInit();
             this.SuspendLayout();
@@ -112,14 +112,15 @@ namespace PhonebookDesktopUI
             this.RefreshDataButton.UseVisualStyleBackColor = true;
             this.RefreshDataButton.Click += new System.EventHandler(this.RefreshDataButton_Click);
             // 
-            // consoleButton
+            // ConsoleButton
             // 
-            this.consoleButton.Location = new System.Drawing.Point(169, 37);
-            this.consoleButton.Name = "consoleButton";
-            this.consoleButton.Size = new System.Drawing.Size(151, 24);
-            this.consoleButton.TabIndex = 6;
-            this.consoleButton.Text = "Launch Console Runner";
-            this.consoleButton.UseVisualStyleBackColor = true;
+            this.ConsoleButton.Location = new System.Drawing.Point(169, 37);
+            this.ConsoleButton.Name = "ConsoleButton";
+            this.ConsoleButton.Size = new System.Drawing.Size(151, 24);
+            this.ConsoleButton.TabIndex = 6;
+            this.ConsoleButton.Text = "Launch Console Runner";
+            this.ConsoleButton.UseVisualStyleBackColor = true;
+            this.ConsoleButton.Click += new System.EventHandler(this.ConsoleButton_Click);
             // 
             // apiButton
             // 
@@ -137,7 +138,7 @@ namespace PhonebookDesktopUI
             this.BackColor = System.Drawing.Color.CornflowerBlue;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.apiButton);
-            this.Controls.Add(this.consoleButton);
+            this.Controls.Add(this.ConsoleButton);
             this.Controls.Add(this.RefreshDataButton);
             this.Controls.Add(this.phonebookGridView);
             this.Controls.Add(this.DeleteButton);
@@ -161,7 +162,7 @@ namespace PhonebookDesktopUI
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.DataGridView phonebookGridView;
         private System.Windows.Forms.Button RefreshDataButton;
-        private System.Windows.Forms.Button consoleButton;
+        private System.Windows.Forms.Button ConsoleButton;
         private System.Windows.Forms.Button apiButton;
     }
 }

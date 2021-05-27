@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using PhonebookLibrary;
 using PhonebookDesktopUI.Forms;
+using System.Diagnostics;
 
 namespace PhonebookDesktopUI
 {
@@ -39,6 +40,9 @@ namespace PhonebookDesktopUI
 
         private void RefreshDataButton_Click(object sender, EventArgs e)
         {
+            var dataAccess = new JsonDataAccess();
+            Phonebook.Contacts = new List<Contact>();
+            dataAccess.LoadData();
             phonebookGridView.DataSource = null;
             phonebookGridView.DataSource = Phonebook.Contacts;
         }
@@ -78,5 +82,9 @@ namespace PhonebookDesktopUI
             phonebookGridView.DataSource = Phonebook.Contacts;
         }
 
+        private void ConsoleButton_Click(object sender, EventArgs e)
+        {
+            Process.Start(@"C:\Users\truec\Desktop\repos\PhonebookApp\PhonebookConsoleUI\bin\Debug\net5.0\PhonebookConsoleUI.exe");
+        }
     }
 }

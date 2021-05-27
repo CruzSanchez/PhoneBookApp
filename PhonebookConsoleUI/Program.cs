@@ -10,10 +10,10 @@ namespace PhonebookConsoleUI
         static void Main(string[] args)
         {
             UserInteraction.Intro();
-            do
-            {
                 var jsonDataAccess = new JsonDataAccess();
                 jsonDataAccess.LoadData();
+            do
+            {
                 UserInteraction.GetMainAction();
             } while (true);
         }

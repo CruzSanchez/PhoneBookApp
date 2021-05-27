@@ -8,7 +8,7 @@ namespace PhonebookLibrary
 {
     public static class Phonebook
     {
-        public static List<Contact> Contacts { get; private set; } = new List<Contact>(); 
+        public static List<Contact> Contacts { get; set; } = new List<Contact>(); 
        
         public static void CreateContact()
         {

@@ -12,12 +12,5 @@
     "Number": "555-555-5555",
     "Email": "cruzsanchez@email.com",
     "DOB": "1992-11-02T00:00:00"
-  },
-  {
-    "Id": 3,
-    "Name": "Test Boi",
-    "Number": "555-555-5555",
-    "Email": "testyboi@testyboi.com",
-    "DOB": "2021-05-23T00:00:00-05:00"
   }
 ]
