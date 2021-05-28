@@ -38,7 +38,7 @@ namespace PhonebookDesktopUI
             this.phonebookGridView = new System.Windows.Forms.DataGridView();
             this.RefreshDataButton = new System.Windows.Forms.Button();
             this.ConsoleButton = new System.Windows.Forms.Button();
-            this.apiButton = new System.Windows.Forms.Button();
+            this.ApiButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.phonebookGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -114,22 +114,25 @@ namespace PhonebookDesktopUI
             // 
             // ConsoleButton
             // 
+            this.ConsoleButton.Font = new System.Drawing.Font("Sitka Subheading", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.ConsoleButton.Location = new System.Drawing.Point(169, 37);
             this.ConsoleButton.Name = "ConsoleButton";
-            this.ConsoleButton.Size = new System.Drawing.Size(151, 24);
+            this.ConsoleButton.Size = new System.Drawing.Size(151, 28);
             this.ConsoleButton.TabIndex = 6;
             this.ConsoleButton.Text = "Launch Console Runner";
             this.ConsoleButton.UseVisualStyleBackColor = true;
             this.ConsoleButton.Click += new System.EventHandler(this.ConsoleButton_Click);
             // 
-            // apiButton
+            // ApiButton
             // 
-            this.apiButton.Location = new System.Drawing.Point(367, 37);
-            this.apiButton.Name = "apiButton";
-            this.apiButton.Size = new System.Drawing.Size(75, 24);
-            this.apiButton.TabIndex = 7;
-            this.apiButton.Text = "Launch API";
-            this.apiButton.UseVisualStyleBackColor = true;
+            this.ApiButton.Font = new System.Drawing.Font("Sitka Subheading", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.ApiButton.Location = new System.Drawing.Point(367, 37);
+            this.ApiButton.Name = "ApiButton";
+            this.ApiButton.Size = new System.Drawing.Size(106, 28);
+            this.ApiButton.TabIndex = 7;
+            this.ApiButton.Text = "Launch API";
+            this.ApiButton.UseVisualStyleBackColor = true;
+            this.ApiButton.Click += new System.EventHandler(this.ApiButton_Click);
             // 
             // PhonebookForm
             // 
@@ -137,7 +140,7 @@ namespace PhonebookDesktopUI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CornflowerBlue;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.apiButton);
+            this.Controls.Add(this.ApiButton);
             this.Controls.Add(this.ConsoleButton);
             this.Controls.Add(this.RefreshDataButton);
             this.Controls.Add(this.phonebookGridView);
@@ -163,7 +166,7 @@ namespace PhonebookDesktopUI
         private System.Windows.Forms.DataGridView phonebookGridView;
         private System.Windows.Forms.Button RefreshDataButton;
         private System.Windows.Forms.Button ConsoleButton;
-        private System.Windows.Forms.Button apiButton;
+        private System.Windows.Forms.Button ApiButton;
     }
 }
 

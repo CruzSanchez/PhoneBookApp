@@ -86,5 +86,10 @@ namespace PhonebookDesktopUI
         {
             Process.Start(@"C:\Users\truec\Desktop\repos\PhonebookApp\PhonebookConsoleUI\bin\Debug\net5.0\PhonebookConsoleUI.exe");
         }
+
+        private void ApiButton_Click(object sender, EventArgs e)
+        {
+            Process.Start(@"C:\Users\truec\Desktop\repos\PhonebookApp\PhonebookApi\bin\Debug\net5.0\PhonebookApi.exe");
+        }
     }
 }
