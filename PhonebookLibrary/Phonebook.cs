@@ -51,7 +51,6 @@ namespace PhonebookLibrary
             contact.Email = Console.ReadLine();
             Console.WriteLine("Now enter the new DOB of your contact:");
             contact.DOB = DateTime.Parse(Console.ReadLine());            
-            
         }
 
 

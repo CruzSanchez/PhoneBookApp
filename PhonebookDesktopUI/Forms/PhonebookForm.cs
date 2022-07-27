@@ -42,8 +42,7 @@ namespace PhonebookDesktopUI
         {
             var dataAccess = new JsonDataAccess();
             Phonebook.Contacts = new List<Contact>();
-            dataAccess.LoadData();
-            phonebookGridView.DataSource = null;
+            dataAccess.LoadData();            
             phonebookGridView.DataSource = Phonebook.Contacts;
         }
 
